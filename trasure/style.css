@@ -1,0 +1,266 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Yu Gothic","Meiryo",sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    padding:20px;
+    text-align:center;
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+#settingsPanel{
+    width:700px;
+    max-width:95%;
+    margin:0 auto 20px;
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+}
+
+#settingsPanel h2,
+#settingsPanel h3{
+    margin-bottom:15px;
+}
+
+.settingRow{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:10px 0;
+    gap:20px;
+}
+
+.settingRow label{
+    font-weight:bold;
+}
+
+.settingRow input,
+.settingRow select{
+    width:220px;
+    padding:6px;
+    font-size:16px;
+}
+
+.radioArea{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin:15px 0;
+    flex-wrap:wrap;
+}
+
+.radioArea label{
+    cursor:pointer;
+}
+
+hr{
+    margin:20px 0;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+    border-radius:8px;
+    background:#1976d2;
+    color:white;
+    font-size:18px;
+    padding:10px 22px;
+    transition:.2s;
+}
+
+button:hover{
+    opacity:.85;
+}
+
+button:disabled{
+    background:#999;
+    cursor:not-allowed;
+}
+
+#topButtons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+#bottomButtons{
+    margin-top:25px;
+}
+
+#gameArea{
+    width:100%;
+}
+
+#treasureContainer{
+    display:grid;
+    gap:20px;
+    justify-content:center;
+    width:95vw;
+    max-width:1200px;
+    margin:20px auto;
+}
+
+/* 宝箱 */
+
+.treasureBox{
+
+    aspect-ratio:1/1;
+
+    background-image:url("images/chest.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    border:none;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    font-size:48px;
+
+    font-weight:bold;
+
+    user-select:none;
+
+    transition:.2s;
+
+}
+
+.treasureBox:hover{
+
+    transform:scale(1.05);
+
+}
+
+.treasureBox.selected{
+
+    border:5px solid red;
+
+    transform:scale(1.08);
+
+}
+
+.treasureBox.opened{
+
+    background-image:none;
+
+    cursor:default;
+
+}
+
+.treasureBox.opened:hover{
+
+    transform:none;
+
+}
+
+.treasureBox img{
+
+    width:90%;
+
+    height:90%;
+
+    object-fit:contain;
+
+}
+
+.treasureBox{
+
+    font-weight:bold;
+
+    font-size:52px;
+
+}
+
+/* 宝箱数ごとのサイズ */
+
+.box2{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.box3{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.box4{
+    grid-template-columns:repeat(4,1fr);
+}
+
+.box5{
+    grid-template-columns:repeat(5,1fr);
+}
+
+.box6{
+    grid-template-columns:repeat(3,1fr);
+}
+
+.box7{
+    grid-template-columns:repeat(4,1fr);
+}
+
+.box8{
+    grid-template-columns:repeat(4,1fr);
+}
+
+.box9{
+    grid-template-columns:repeat(5,1fr);
+}
+
+.box10{
+    grid-template-columns:repeat(5,1fr);
+}
+
+/* スマホ */
+
+@media(max-width:700px){
+
+    .settingRow{
+
+        flex-direction:column;
+
+    }
+
+    .settingRow input,
+
+    .settingRow select{
+
+        width:100%;
+
+    }
+
+    .box2,
+    .box3,
+    .box4,
+    .box5,
+    .box6,
+    .box7,
+    .box8,
+    .box9,
+    .box10{
+
+        grid-template-columns:repeat(2,40vw);
+
+    }
+
+   .treasureBox{
+    width:100%;
+    min-height:180px;
+    aspect-ratio:1/1;
+    font-size:72px;
+}
+
+}

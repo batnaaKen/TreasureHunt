@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宝探しゲーム</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===============================
+         設定画面
+    ================================ -->
+
+    <div id="settingsPanel">
+
+        <h2>ゲーム設定</h2>
+
+        <div class="settingRow">
+            <label>宝箱の数</label>
+
+            <select id="boxCount">
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option selected>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+        </div>
+
+        <hr>
+
+        <h3>モード</h3>
+
+        <div class="radioArea">
+
+            <label>
+                <input type="radio" name="mode" value="image" checked>
+                画像モード
+            </label>
+
+            <label>
+                <input type="radio" name="mode" value="number">
+                数字モード
+            </label>
+
+            <label>
+                <input type="radio" name="mode" value="alphabet">
+                アルファベットモード
+            </label>
+
+        </div>
+
+        <!-- 画像モード専用設定 -->
+        <div id="imageSettings">
+
+            <hr>
+
+            <div class="settingRow">
+                <label>当たりの数</label>
+                <input id="winCount" type="number" min="0" value="1">
+            </div>
+
+            <div class="settingRow">
+                <label>ハズレの数</label>
+                <input id="loseCount" type="number" min="0" value="2">
+            </div>
+
+            <hr>
+
+            <h3>画像設定</h3>
+
+            <div class="settingRow">
+                <label>当たり画像</label>
+                <input id="winImage" type="file" accept="image/*">
+            </div>
+
+            <div class="settingRow">
+                <label>ハズレ画像</label>
+                <input id="loseImage" type="file" accept="image/*">
+            </div>
+
+            <p style="margin-top:10px;font-size:14px;color:#666;">
+                ※画像を選択しない場合は、imagesフォルダ内のデフォルト画像を使用します。
+            </p>
+
+        </div>
+
+        <br>
+
+        <button id="startButton">
+            スタート
+        </button>
+
+    </div>
+
+    <!-- ===============================
+         ゲーム画面
+    ================================ -->
+
+    <div id="gameArea">
+
+        <div id="topButtons">
+
+            <button id="showSettings">
+                設定
+            </button>
+
+            <button id="restartButton">
+                リスタート
+            </button>
+
+        </div>
+
+        <div id="treasureContainer">
+            <!-- JavaScriptが生成 -->
+        </div>
+
+        <div id="bottomButtons">
+
+            <button id="confirmButton">
+                決定
+            </button>
+
+            <button id="openAllButton">
+                オープン
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
